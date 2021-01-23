@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'fileutils'
-require 'pathname'
-
 linter = "bundle exec slim-lint source/**/*.slim"
 lint_count = 0 
 
