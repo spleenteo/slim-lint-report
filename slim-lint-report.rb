@@ -5,15 +5,14 @@ lint_count = 0
 
 output = %x[ #{linter} ]
 
-paths = []
+warnings = []
 output.each_line do |line|
   path = line.split(":")[0]
-  paths << path
-  lint_count += 1 
+  warnings << path
 end
 
 grouped = Hash.new(0)
-paths.each do |line|
+warnings.each do |line|
   grouped[line] += 1
 end
 
@@ -24,4 +23,4 @@ end
 puts "\n\n"
 puts "------------------------------------------\n"
 puts "------------------------------------------\n"
-puts "You have #{lint_count} warnings."
+puts "You have #{warnings.count} warnings."
